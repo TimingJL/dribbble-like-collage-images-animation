@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/dribbble-like-collage-images-animation/static/css/main.2cce8147.chunk.css",
-    "main.js": "/dribbble-like-collage-images-animation/static/js/main.d5afa2df.chunk.js",
-    "main.js.map": "/dribbble-like-collage-images-animation/static/js/main.d5afa2df.chunk.js.map",
+    "main.css": "/dribbble-like-collage-images-animation/static/css/main.840910d4.chunk.css",
+    "main.js": "/dribbble-like-collage-images-animation/static/js/main.3f947961.chunk.js",
+    "main.js.map": "/dribbble-like-collage-images-animation/static/js/main.3f947961.chunk.js.map",
     "runtime~main.js": "/dribbble-like-collage-images-animation/static/js/runtime~main.07a3407b.js",
     "runtime~main.js.map": "/dribbble-like-collage-images-animation/static/js/runtime~main.07a3407b.js.map",
-    "static/js/2.b41502e9.chunk.js": "/dribbble-like-collage-images-animation/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/dribbble-like-collage-images-animation/static/js/2.b41502e9.chunk.js.map",
+    "static/js/2.5bffe49f.chunk.js": "/dribbble-like-collage-images-animation/static/js/2.5bffe49f.chunk.js",
+    "static/js/2.5bffe49f.chunk.js.map": "/dribbble-like-collage-images-animation/static/js/2.5bffe49f.chunk.js.map",
     "index.html": "/dribbble-like-collage-images-animation/index.html",
-    "precache-manifest.a1db3dbb69ffc50fc6eb02c661a1a049.js": "/dribbble-like-collage-images-animation/precache-manifest.a1db3dbb69ffc50fc6eb02c661a1a049.js",
+    "precache-manifest.e7315193d50726e1b3193b88007b222b.js": "/dribbble-like-collage-images-animation/precache-manifest.e7315193d50726e1b3193b88007b222b.js",
     "service-worker.js": "/dribbble-like-collage-images-animation/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/dribbble-like-collage-images-animation/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/dribbble-like-collage-images-animation/static/media/logo.5d5d9eef.svg"
+    "static/css/main.840910d4.chunk.css.map": "/dribbble-like-collage-images-animation/static/css/main.840910d4.chunk.css.map"
   }
 }
