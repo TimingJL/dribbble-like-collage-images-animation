@@ -21,7 +21,7 @@ const transformAnimation = () => {
     }
     100% {
       opacity: 1;
-      transform: translateX(0px) translateY(0px) translateZ(0px) scale(0.9);
+      transform: translateX(0px) translateY(0px) translateZ(0px) scale(1);
     }
   `;
 };
@@ -46,7 +46,7 @@ const PuzzleBox = styled.div`
 
   &:hover {
     z-index: 1;
-    transform: scale(1.3);
+    transform: scale(1.5);
     box-shadow: 0 5px 30px rgba(0,0,0,0.3);
     transition: all 0.1s ease-in-out;
   }

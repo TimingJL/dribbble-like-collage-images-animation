@@ -1,9 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Puzzle from './Puzzle';
 
 import { imagePositions } from './constants';
+
+const invisibleAnimation = keyframes`
+  0% {
+    color: #eee;
+  }
+  100% {
+    color: white;
+    opacity: 0;
+  }
+`;
 
 const CharBoxWrapper = styled.div`
   position: relative;
@@ -11,7 +21,9 @@ const CharBoxWrapper = styled.div`
   justify-content: center;
   align-items: center;
   .char-box__char {
-    opacity: 0.1;
+    color: #eee;
+    animation: ${invisibleAnimation} 1s ease-in;
+    animation-fill-mode: forwards; /* 保持動畫結束後的狀態 */
   }
 `;
 
