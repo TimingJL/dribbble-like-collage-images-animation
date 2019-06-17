@@ -17,12 +17,14 @@ const CharBoxWrapper = styled.div`
 
 const CharBox = ({
   char,
+  charIndex,
 }) => {
   return (
     <CharBoxWrapper>
       <div className="char-box__char">{char}</div>
       <Puzzle
         positions={imagePositions[char]}
+        charIndex={charIndex}
       />
     </CharBoxWrapper>
   );
@@ -30,10 +32,12 @@ const CharBox = ({
 
 CharBox.propTypes = {
   char: PropTypes.string,
+  charIndex: PropTypes.number,
 };
 
 CharBox.defaultProps = {
   char: '',
+  charIndex: 0,
 };
 
 export default CharBox;

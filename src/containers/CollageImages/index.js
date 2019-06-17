@@ -18,6 +18,7 @@ const CollageImages = () => {
             <CharBox
               key={indexKey(index)}
               char={char}
+              charIndex={index}
             />
           ))
         }
