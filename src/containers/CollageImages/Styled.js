@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.h1`
-  font-size: 30vw;
-  color: #333;
-  opacity: 0.1;
+export const StyledHeader = styled.div`
+  position: relative;
+  width: 90vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: ${(props) => 120 / props.text.length}vw;
   transition: all 1s ease-in-out;
+`;
+
+export const CollageImagesWrapper = styled.div`
+
 `;
