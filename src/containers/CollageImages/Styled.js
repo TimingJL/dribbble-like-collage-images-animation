@@ -7,7 +7,7 @@ export const StyledHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${(props) => 120 / props.text.length}vw;
+  font-size: ${(props) => 80 / props.text.length}vw;
   transition: all 1s ease-in-out;
 `;
 

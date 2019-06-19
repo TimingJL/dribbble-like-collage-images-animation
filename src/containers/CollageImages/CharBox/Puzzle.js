@@ -2,18 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
+import {
+  imagePool,
+} from './constants';
+
 const sign = () => (Math.floor(Math.random() * 10) % 2 === 0 ? 1 : -1);
 const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min;
+const getRandomImage = () => imagePool[Math.floor(Math.random() * imagePool.length)];
 
 const transformAnimation = () => {
   const x = sign() * 1000 * Math.random();
   const y = sign() * 1000 * Math.random();
   const z = 500 * Math.random();
   const s = getRandomArbitrary(2, 10);
-  // console.log('x: ', x);
-  // console.log('y: ', y);
-  // console.log('z: ', z);
-  // console.log('s: ', s);
   return keyframes`
     0% {
       opacity: 0;
@@ -37,8 +38,11 @@ const PuzzleBox = styled.div`
   width: 18%;
   height: 6%;
   border-radius: 5px;
-  background: #00ffe1;
-  border: 1px solid #999;
+
+  background: url(${props => props.imageUrl});
+  background-size:cover;
+  background-position:center;
+
   left: ${(props) => `${props.pos[0]}%;`};
   top: ${(props) => `${props.pos[1]}%;`};
   cursor: pointer;
@@ -51,7 +55,18 @@ const PuzzleBox = styled.div`
     transition: all 0.1s ease-in-out;
   }
 
-  animation : ${props => transformAnimation()} ${props => props.delay}s ease-in-out;
+  animation : ${() => transformAnimation()} ${props => props.delay}s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    font-size: 9px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: blue;
+    opacity: 0.5;
+  }
 `;
 
 const Puzzle = ({
@@ -65,7 +80,8 @@ const Puzzle = ({
           <PuzzleBox
             key={index}
             pos={pos}
-            delay={(charIndex + 1) * 0.6 + 1}
+            delay={(charIndex + 1) * 0.6 + 0.8}
+            imageUrl={getRandomImage()}
           />
         ))
       }
