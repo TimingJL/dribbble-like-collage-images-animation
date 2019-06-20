@@ -35,6 +35,9 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react": "^7.13.0",
     "gh-pages": "^2.0.1"
   }
 }

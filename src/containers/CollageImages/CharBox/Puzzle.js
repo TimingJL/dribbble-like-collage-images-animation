@@ -39,7 +39,7 @@ const PuzzleBox = styled.div`
   height: 6%;
   border-radius: 5px;
 
-  background-image: url(${props => props.imageUrl}), linear-gradient(#ffc700, #ffc700);
+  background-image: url(${(props) => props.imageUrl}), linear-gradient(#ffc700, #ffc700);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
@@ -56,7 +56,7 @@ const PuzzleBox = styled.div`
     transition: all 0.1s ease-in-out;
   }
 
-  animation : ${() => transformAnimation()} ${props => props.delay}s ease-in-out;
+  animation : ${() => transformAnimation()} ${(props) => props.delay}s ease-in-out;
 
   /* &:after {
     content: '';
@@ -74,10 +74,9 @@ const Puzzle = ({
   positions,
   charIndex,
   isActive,
-}) => {
-  return (
-    <PuzzleWrapper>
-      {
+}) => (
+  <PuzzleWrapper>
+    {
         isActive &&
         positions.map((pos, index) => (
           <PuzzleBox
@@ -88,19 +87,18 @@ const Puzzle = ({
           />
         ))
       }
-    </PuzzleWrapper>
-  );
-};
+  </PuzzleWrapper>
+);
 
 Puzzle.propTypes = {
   positions: PropTypes.array,
-  boxWidth: PropTypes.number,
+  isActive: PropTypes.bool,
   charIndex: PropTypes.number,
 };
 
 Puzzle.defaultProps = {
   positions: [],
-  boxWidth: 0,
+  isActive: false,
   charIndex: 0,
 };
 

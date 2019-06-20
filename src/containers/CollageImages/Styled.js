@@ -17,6 +17,7 @@ export const CollageImagesWrapper = styled.div`
 
 export const OperatorWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;

@@ -32,18 +32,16 @@ const CharBox = ({
   char,
   charIndex,
   isActive,
-}) => {
-  return (
-    <CharBoxWrapper>
-      <div className="char-box__char">{char}</div>
-      <Puzzle
-        positions={imagePositions[char]}
-        charIndex={charIndex}
-        isActive={isActive}
-      />
-    </CharBoxWrapper>
-  );
-};
+}) => (
+  <CharBoxWrapper>
+    <div className="char-box__char">{char}</div>
+    <Puzzle
+      positions={imagePositions[char]}
+      charIndex={charIndex}
+      isActive={isActive}
+    />
+  </CharBoxWrapper>
+);
 
 CharBox.propTypes = {
   char: PropTypes.string,

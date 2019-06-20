@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
+import ColorPickerSlider from 'components/ColorPickerSlider';
 import CharBox from './CharBox';
 
 import {
@@ -32,7 +33,8 @@ const CollageImages = () => {
         }
       </StyledHeader>
       <OperatorWrapper>
-        <button onClick={handleRepeatAnimation}>Repeat Animation</button>
+        <button type="button" onClick={handleRepeatAnimation}>Repeat Animation</button>
+        <ColorPickerSlider />
       </OperatorWrapper>
     </CollageImagesWrapper>
   );
