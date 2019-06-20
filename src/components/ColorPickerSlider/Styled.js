@@ -9,6 +9,8 @@ export const ColorPickerSliderWrapper = styled.div`
   display: flex;
   align-items: center;
   .color-picker-slider__track {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 6px;
     border-radius: 0.5em;
@@ -17,8 +19,6 @@ export const ColorPickerSliderWrapper = styled.div`
 
   .color-picker-slider__thumb {
     position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
     background: white;
     cursor: pointer;
     width: ${SIZE_THUMB}px;
@@ -26,5 +26,11 @@ export const ColorPickerSliderWrapper = styled.div`
     border-radius: 100%;
     box-sizing: border-box;
     border: 0.4em solid currentColor;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
+      transition: all 0.2s ease-in-out;
+    }
   }
 `;
