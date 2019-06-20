@@ -20,6 +20,7 @@ const CharBoxWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0px 5px;
   .char-box__char {
     color: #eee;
     animation: ${invisibleAnimation} 1s ease-in;
