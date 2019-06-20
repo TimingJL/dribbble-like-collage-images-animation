@@ -30,6 +30,7 @@ const CharBoxWrapper = styled.div`
 const CharBox = ({
   char,
   charIndex,
+  isActive,
 }) => {
   return (
     <CharBoxWrapper>
@@ -37,6 +38,7 @@ const CharBox = ({
       <Puzzle
         positions={imagePositions[char]}
         charIndex={charIndex}
+        isActive={isActive}
       />
     </CharBoxWrapper>
   );
@@ -45,11 +47,13 @@ const CharBox = ({
 CharBox.propTypes = {
   char: PropTypes.string,
   charIndex: PropTypes.number,
+  isActive: PropTypes.bool,
 };
 
 CharBox.defaultProps = {
   char: '',
   charIndex: 0,
+  isActive: false,
 };
 
 export default CharBox;

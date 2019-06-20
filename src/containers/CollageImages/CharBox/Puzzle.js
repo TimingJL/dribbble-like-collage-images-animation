@@ -64,18 +64,20 @@ const PuzzleBox = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    background: blue;
-    opacity: 0.5;
+    background: #ffc700;
+    opacity: 0.7;
   }
 `;
 
 const Puzzle = ({
   positions,
   charIndex,
+  isActive,
 }) => {
   return (
     <PuzzleWrapper>
       {
+        isActive &&
         positions.map((pos, index) => (
           <PuzzleBox
             key={index}

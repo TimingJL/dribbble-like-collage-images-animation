@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledHeader = styled.div`
   position: relative;
   width: 90vw;
-  height: 100vh;
+  /* height: 80vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,4 +13,10 @@ export const StyledHeader = styled.div`
 
 export const CollageImagesWrapper = styled.div`
 
+`;
+
+export const OperatorWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
