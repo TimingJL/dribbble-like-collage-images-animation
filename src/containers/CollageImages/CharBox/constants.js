@@ -70,7 +70,6 @@ export const imagePool = [
   'https://cdn.dribbble.com/users/1788811/screenshots/6656342/png_2x.png',
   'https://cdn.dribbble.com/users/2899680/screenshots/6656329/hypo_baby_2x.jpg',
   'http://3.bp.blogspot.com/-hf4m8eoDyII/ViW1aoYXbOI/AAAAAAAAFT0/M27fGVnOq88/s1600/sheep4.png',
-  // 'https://cdn0-digiphoto.techbang.com/system/excerpt_images/9678/inpage/5aced0af2769905a199351f9a50f8764.jpg?1521819134',
   'https://img.tagmum.com/201708/1438.jpg',
   'https://cdn.dribbble.com/users/271492/screenshots/2153614/attachments/394867/%E6%9C%89%E7%97%850719_1600x1200_%E9%BB%91%E7%99%BD.png',
   'http://www.ziticq.com/upload/image/20181230/5c28492139325.jpg',

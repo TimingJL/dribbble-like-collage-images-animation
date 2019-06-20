@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
@@ -70,7 +70,7 @@ const PuzzleBox = styled.div`
   } */
 `;
 
-const Puzzle = ({
+const Puzzle = memo(({
   positions,
   charIndex,
   isActive,
@@ -88,7 +88,7 @@ const Puzzle = ({
         ))
       }
   </PuzzleWrapper>
-);
+));
 
 Puzzle.propTypes = {
   positions: PropTypes.array,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import Puzzle from './Puzzle';
@@ -28,7 +28,7 @@ const CharBoxWrapper = styled.div`
   }
 `;
 
-const CharBox = ({
+const CharBox = memo(({
   char,
   charIndex,
   isActive,
@@ -41,7 +41,7 @@ const CharBox = ({
       isActive={isActive}
     />
   </CharBoxWrapper>
-);
+));
 
 CharBox.propTypes = {
   char: PropTypes.string,
