@@ -39,9 +39,10 @@ const PuzzleBox = styled.div`
   height: 6%;
   border-radius: 5px;
 
-  background: url(${props => props.imageUrl});
-  background-size:cover;
-  background-position:center;
+  background-image: url(${props => props.imageUrl}), linear-gradient(#ffc700, #ffc700);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
 
   left: ${(props) => `${props.pos[0]}%;`};
   top: ${(props) => `${props.pos[1]}%;`};
@@ -57,7 +58,7 @@ const PuzzleBox = styled.div`
 
   animation : ${() => transformAnimation()} ${props => props.delay}s ease-in-out;
 
-  &:after {
+  /* &:after {
     content: '';
     position: absolute;
     font-size: 9px;
@@ -66,7 +67,7 @@ const PuzzleBox = styled.div`
     border-radius: 5px;
     background: #ffc700;
     opacity: 0.7;
-  }
+  } */
 `;
 
 const Puzzle = ({
