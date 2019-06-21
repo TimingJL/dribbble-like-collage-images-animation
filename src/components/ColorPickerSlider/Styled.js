@@ -18,6 +18,7 @@ export const colorPickerSliderTrackStyle = {
 export const getColorPickerSliderTrackStyle = ({
   thumbLeft,
   thumbSize,
+  pickedColor,
 }) => ({
   position: 'absolute',
   left: `${thumbLeft}px`,
@@ -27,12 +28,7 @@ export const getColorPickerSliderTrackStyle = ({
   background: 'white',
   borderRadius: '100%',
   boxSizing: 'border-box',
-  border: '0.4em solid currentColor',
+  border: `0.4em solid ${pickedColor}`,
+  color: `${pickedColor}`,
   cursor: 'pointer',
-
-  ':hover': {
-    transform: 'scale(1.1)',
-    boxShadow: '0 0.4em 1em rgba(0,0,0,0.15)',
-    transition: 'all 0.2s ease-in-out',
-  },
 });

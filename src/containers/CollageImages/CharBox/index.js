@@ -32,6 +32,7 @@ const CharBox = memo(({
   char,
   charIndex,
   isActive,
+  color,
 }) => (
   <CharBoxWrapper>
     <div className="char-box__char">{char}</div>
@@ -39,6 +40,7 @@ const CharBox = memo(({
       positions={imagePositions[char]}
       charIndex={charIndex}
       isActive={isActive}
+      color={color}
     />
   </CharBoxWrapper>
 ));
@@ -47,12 +49,14 @@ CharBox.propTypes = {
   char: PropTypes.string,
   charIndex: PropTypes.number,
   isActive: PropTypes.bool,
+  color: PropTypes.string,
 };
 
 CharBox.defaultProps = {
   char: '',
   charIndex: 0,
   isActive: false,
+  color: '',
 };
 
 export default CharBox;

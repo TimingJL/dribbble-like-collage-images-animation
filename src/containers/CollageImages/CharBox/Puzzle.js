@@ -39,7 +39,7 @@ const PuzzleBox = styled.div`
   height: 6%;
   border-radius: 5px;
 
-  background-image: url(${(props) => props.imageUrl}), linear-gradient(#ffc700, #ffc700);
+  background-image: url(${(props) => props.imageUrl}), linear-gradient(${(props) => props.color}, ${(props) => props.color});
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
@@ -74,6 +74,7 @@ const Puzzle = memo(({
   positions,
   charIndex,
   isActive,
+  color,
 }) => (
   <PuzzleWrapper>
     {
@@ -84,6 +85,7 @@ const Puzzle = memo(({
             pos={pos}
             delay={(charIndex + 1) * 0.6 + 0.8}
             imageUrl={getRandomImage()}
+            color={color}
           />
         ))
       }
@@ -94,12 +96,14 @@ Puzzle.propTypes = {
   positions: PropTypes.array,
   isActive: PropTypes.bool,
   charIndex: PropTypes.number,
+  color: PropTypes.string,
 };
 
 Puzzle.defaultProps = {
   positions: [],
   isActive: false,
   charIndex: 0,
+  color: '',
 };
 
 export default Puzzle;
