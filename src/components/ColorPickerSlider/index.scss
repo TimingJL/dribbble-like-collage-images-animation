@@ -1,7 +1,0 @@
-.color-picker-slider__thumb {
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
-    transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
-  }
-}

@@ -3,7 +3,6 @@ import React, {
   useEffect, createRef, useState, memo,
 } from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
 import { fromEvent } from 'rxjs';
 import {
   map,
@@ -13,7 +12,7 @@ import {
 import {
   colorPickerSliderWrapperStyle,
   colorPickerSliderTrackStyle,
-  getColorPickerSliderTrackStyle,
+  ColorPickerSliderThumb,
 } from './Styled';
 
 const SIZE_THUMB = 36;
@@ -85,7 +84,7 @@ const ColorPickerSlider = memo(({
       .subscribe((mousePosX) => {
         handleSetValue(trackDOM, mousePosX);
       });
-  }, [thumbRef, trackRef]);
+  }, []);
 
   useEffect(() => {
     const thumbDOM = thumbRef.current;
@@ -100,7 +99,12 @@ const ColorPickerSlider = memo(({
   return (
     <div style={colorPickerSliderWrapperStyle}>
       <div ref={trackRef} style={colorPickerSliderTrackStyle}>
-        <div ref={thumbRef} style={getColorPickerSliderTrackStyle({ thumbLeft: value, thumbSize: SIZE_THUMB, pickedColor })} className="color-picker-slider__thumb" />
+        <ColorPickerSliderThumb
+          ref={thumbRef}
+          thumbSize={SIZE_THUMB}
+          pickedColor={pickedColor}
+          thumbLeft={value}
+        />
       </div>
     </div>
   );
