@@ -59,7 +59,7 @@ const ColorPickerSlider = memo(({
   const [value, setValue] = useState(0);
   const [pickedColor, setPickedColor] = useState('#f00');
 
-  const handleSetValue = (trackDOM, mousePosX) => {
+  const handleSetValue = (trackDOM, thumbDOM, mousePosX) => {
     const trackX = trackDOM.getBoundingClientRect().x;
     const trackWidth = trackDOM.clientWidth;
     const thumbX = limitMaxValue(mousePosX >= trackX ? (mousePosX - trackX) : 0, trackWidth);
@@ -82,7 +82,7 @@ const ColorPickerSlider = memo(({
         map((moveEvent) => moveEvent.clientX),
       )
       .subscribe((mousePosX) => {
-        handleSetValue(trackDOM, mousePosX);
+        handleSetValue(trackDOM, thumbDOM, mousePosX);
       });
   }, []);
 
@@ -101,9 +101,13 @@ const ColorPickerSlider = memo(({
       <div ref={trackRef} style={colorPickerSliderTrackStyle}>
         <ColorPickerSliderThumb
           ref={thumbRef}
-          thumbSize={SIZE_THUMB}
-          pickedColor={pickedColor}
-          thumbLeft={value}
+          style={{
+            width: `${SIZE_THUMB}px`,
+            height: `${SIZE_THUMB}px`,
+            left: `${value}px`,
+            border: `0.4em solid ${pickedColor}`,
+            color: `${pickedColor}`,
+          }}
         />
       </div>
     </div>

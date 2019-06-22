@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.div`
   position: relative;
-  width: 90vw;
+  /* width: 90vw; */
   /* height: 80vh; */
   display: flex;
   justify-content: center;

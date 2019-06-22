@@ -57,17 +57,6 @@ const PuzzleBox = styled.div`
   }
 
   animation : ${() => transformAnimation()} ${(props) => props.delay}s ease-in-out;
-
-  /* &:after {
-    content: '';
-    position: absolute;
-    font-size: 9px;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    background: #ffc700;
-    opacity: 0.7;
-  } */
 `;
 
 const Puzzle = memo(({
