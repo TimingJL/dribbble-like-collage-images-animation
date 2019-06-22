@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const colorPickerSliderWrapperStyle = {
+  transform: 'translateY(-20px)',
   position: 'relative',
   width: '320px',
   height: '48px',
