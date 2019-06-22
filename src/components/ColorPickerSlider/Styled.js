@@ -33,6 +33,7 @@ export const ColorPickerSliderThumb = styled.div`
     transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
   }
   &:active {
+    transform: translateX(-50%) scale(0.975);
     cursor: grabbing;
     background: currentColor;
   }
