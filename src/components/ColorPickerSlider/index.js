@@ -42,7 +42,7 @@ const ColorPickerSlider = memo(({
     setValue(thumbX);
   };
 
-  useEffect(() => {
+  useEffect(() => { // 監聽 thumb 拖曳行為以改變顏色
     const thumbDOM = thumbRef.current;
     const trackDOM = trackRef.current;
     const { body } = document;
@@ -59,7 +59,19 @@ const ColorPickerSlider = memo(({
       });
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { // 點擊 track bar 可以使 thumb 直接跳到被點擊位置
+    const trackDOM = trackRef.current;
+    const mouseDown = fromEvent(trackDOM, 'mousedown');
+    mouseDown
+      .pipe(
+        map((mouseEvent) => mouseEvent.clientX),
+      )
+      .subscribe((mousePosX) => {
+        handleSetValue(trackDOM, mousePosX);
+      });
+  }, []);
+
+  useEffect(() => { // 監聽 mouseup 行為，以取得事件完成後顏色
     const thumbDOM = thumbRef.current;
     const { body } = document;
     const mouseUp = fromEvent(body, 'mouseup');
