@@ -1,4 +1,12 @@
 import styled from 'styled-components';
+import {
+  COLOR_RED,
+  COLOR_YELLOW,
+  COLOR_GREEN,
+  COLOR_BLUE_LIGHT,
+  COLOR_BLUE_DARK,
+  COLOR_PURPLE,
+} from './constants';
 
 export const colorPickerSliderWrapperStyle = {
   transform: 'translateY(-20px)',
@@ -15,7 +23,7 @@ export const colorPickerSliderTrackStyle = {
   width: '100%',
   height: '6px',
   borderRadius: '0.5em',
-  background: 'linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00)',
+  background: `linear-gradient(to right, ${COLOR_RED}, ${COLOR_YELLOW}, ${COLOR_GREEN}, ${COLOR_BLUE_LIGHT}, ${COLOR_BLUE_DARK}, ${COLOR_PURPLE}, ${COLOR_RED})`,
 };
 
 export const ColorPickerSliderThumb = styled.div`
