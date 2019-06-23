@@ -18,7 +18,7 @@ import {
 } from './constants';
 import {
   useMouseDrag,
-  useTrackClick,
+  useMouseClickTrack,
   useMouseUp,
 } from './customHooks';
 
@@ -42,7 +42,7 @@ const ColorPickerSlider = memo(({
   };
 
   useMouseDrag({ thumbRef, trackRef, handleSetValue });
-  useTrackClick({ trackRef, handleSetValue });
+  useMouseClickTrack({ trackRef, handleSetValue });
   useMouseUp({ thumbRef, handleGetColor });
 
 

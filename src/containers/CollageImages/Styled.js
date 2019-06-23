@@ -6,6 +6,9 @@ export const Message = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 760px) {
+    transform: translateY(0px);
+  }
   .message__title {
     font-size: 2rem;
     color: #333;

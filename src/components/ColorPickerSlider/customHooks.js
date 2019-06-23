@@ -30,7 +30,7 @@ export const useMouseDrag = ({
   }, []);
 };
 
-export const useTrackClick = ({
+export const useMouseClickTrack = ({
   trackRef,
   handleSetValue,
 }) => {
