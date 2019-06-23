@@ -114,10 +114,10 @@ mouseDown
     handleSetValue(trackDOM, mousePosX);
   });
 ```
->改變 HTML5 range 樣式的兩種方法
+>改變 HTML5 range 樣式的兩種方法  
 >https://www.oxxostudio.tw/articles/201503/html5-input-range-style.html
 >
->30 天精通 RxJS (08)：簡易拖拉實作 - take, first, takeUntil, concatAll
+>30 天精通 RxJS (08)：簡易拖拉實作 - take, first, takeUntil, concatAll  
 >https://ithelp.ithome.com.tw/articles/10187333
 
 **拖拉功能選顏色：**  
