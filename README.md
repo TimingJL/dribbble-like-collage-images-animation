@@ -36,10 +36,10 @@ const imagePositions = {
 - 這邊的動畫是使用 css 的 `transform` 屬性並搭配 `keyframes` 來產生，其中圖片飛入的角度是由 transform 的 `translateX`, `translateY`, `translateZ` 三個值並透過亂數來控制。
 - 另外由於飛入的時候，想要製造圖片由近而遠往前飛的效果，物理上，近距離的東西看起來比較大，變遠之後東西看起來會比較小，所以這邊加入 transform 的 `scale` 屬性來調整圖片方大縮小的比例。
 ```js
-const sign = () => (Math.floor(Math.random() * 10) % 2 === 0 ? 1 : -1);
+const signed = () => (Math.floor(Math.random() * 10) % 2 === 0 ? 1 : -1);
 const transformAnimation = () => {
-  const x = sign() * 1000 * Math.random();
-  const y = sign() * 1000 * Math.random();
+  const x = signed() * 1000 * Math.random();
+  const y = signed() * 1000 * Math.random();
   const z = 500 * Math.random();
   const s = getRandomArbitrary(2, 10);
   return keyframes`
@@ -131,3 +131,8 @@ mouseDown
 - 這是因為只要每次傳入的 `props` 發生改變，`styled-components` 元件就需要產一個新的 class 來改變樣式。
 - 為了避免很頻繁的產生新的 class ，這邊我把需要透過 `props` 很頻繁更新的屬性從 `styled-components` 裡面抽出來，寫成 inline style 的樣式，藉此避免上述的問題。
 
+
+
+
+rxjs drag and drop with touch support
+https://gist.github.com/MoLow/5adec1333e11e03ebc6dbf08c2a6d30c

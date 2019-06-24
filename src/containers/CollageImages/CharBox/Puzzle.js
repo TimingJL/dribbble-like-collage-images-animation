@@ -6,13 +6,13 @@ import {
   imagePool,
 } from './constants';
 
-const sign = () => (Math.floor(Math.random() * 10) % 2 === 0 ? 1 : -1);
+const signed = () => (Math.floor(Math.random() * 10) % 2 === 0 ? 1 : -1);
 const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min;
 const getRandomImage = () => imagePool[Math.floor(Math.random() * imagePool.length)];
 
 const transformAnimation = () => {
-  const x = sign() * 1000 * Math.random();
-  const y = sign() * 1000 * Math.random();
+  const x = signed() * 1000 * Math.random();
+  const y = signed() * 1000 * Math.random();
   const z = 500 * Math.random();
   const s = getRandomArbitrary(2, 10);
   return keyframes`
