@@ -149,7 +149,7 @@ export const useTouchDrag = ({
 };
 ```
 
->rxjs drag and drop with touch support
+>rxjs drag and drop with touch support  
 >https://gist.github.com/MoLow/5adec1333e11e03ebc6dbf08c2a6d30c
 
 **拖拉功能選顏色：**  
