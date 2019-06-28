@@ -20,6 +20,9 @@ import {
   useMouseDrag,
   useMouseClickTrack,
   useMouseUp,
+  useTouchDrag,
+  useTouchClickTrack,
+  useTouchUp,
 } from './customHooks';
 
 
@@ -44,6 +47,10 @@ const ColorPickerSlider = memo(({
   useMouseDrag({ thumbRef, trackRef, handleSetValue });
   useMouseClickTrack({ trackRef, handleSetValue });
   useMouseUp({ thumbRef, handleGetColor });
+
+  useTouchDrag({ thumbRef, trackRef, handleSetValue });
+  useTouchClickTrack({ trackRef, handleSetValue });
+  useTouchUp({ thumbRef, handleGetColor });
 
 
   return (

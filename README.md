@@ -120,6 +120,38 @@ mouseDown
 >30 天精通 RxJS (08)：簡易拖拉實作 - take, first, takeUntil, concatAll  
 >https://ithelp.ithome.com.tw/articles/10187333
 
+**手機上的拖拉功能：**  
+- 我們做完拖拉功能之後，如果用手機開啟網頁玩玩看，會發現怎麼拖拉功能失靈了！？原因是因為我們上面用 RxJS 所實作的拖拉功能，是監聽滑鼠事件(mouse event)，而在智慧型觸控裝置上面，我們在滑來滑去的時候，其實是觸碰事件(touch event)，因為觸發的是不同的事件，因此功能才會失靈。
+- 若我們希望在手機上面也能夠拖拉色彩選擇拉霸的話，我們需要找到對應的事件並且監聽他。如下程式碼，觸控螢幕上面，按下事件是 `touchstart` ，結束而放開手指的事件是 `touchend` ，而滑手機的那個滑動事件是 `touchmove` 。
+- 除了要修改事件之外，另一方面要特別注意的是，我們所希望取得的游標位置 `clientX` 這個參數，跟滑鼠事件稍微有所不同，所以只改事件名稱是不行的，需要再檢查一下物件的結構，行為才會正確。
+```js
+export const useTouchDrag = ({
+  thumbRef,
+  trackRef,
+  handleSetValue,
+}) => {
+  useEffect(() => { // 監聽 thumb 拖曳行為以改變顏色
+    const thumbDOM = thumbRef.current;
+    const trackDOM = trackRef.current;
+    const { body } = document;
+    const touchStart = fromEvent(thumbDOM, 'touchstart');
+    const touchUp = fromEvent(body, 'touchend');
+    const touchEnd = fromEvent(body, 'touchmove');
+    touchStart
+      .pipe(
+        concatMap(() => touchEnd.pipe(takeUntil(touchUp))),
+        map((touchEvent) => touchEvent.touches[0].clientX), // 跟滑鼠事件取得 clientX 略有不同
+      )
+      .subscribe((touchPosX) => {
+        handleSetValue(trackDOM, touchPosX);
+      });
+  }, []);
+};
+```
+
+>rxjs drag and drop with touch support
+>https://gist.github.com/MoLow/5adec1333e11e03ebc6dbf08c2a6d30c
+
 **拖拉功能選顏色：**  
 - 完成拖拉功能之後，我們需要讓 `thumb` 元件被拖拉到哪裡，就改變成什麼顏色。但是拖拉的時候，我們只有得到 `thumb` 距離拉霸軌道 `track` 最左邊的距離，要怎麼讓他可以改變顏色呢？答案是，無腦用算的。
 - 因為我們拉霸有六種顏色，分別是紅色、黃色、綠色、淺藍、深藍、紫色、回到紅色。兩個相鄰的顏色彼此漸層。所以這邊我就用兩個顏色相鄰的距離，來對應相對的顏色。由於顏色的表達是由16進位的 `00` 到 `ff` ，或是 `ff` 到 `00` ，因此把距離換算成相對應比例的 `16 進位數字` 之後，就能夠產生相對應的色票顏色了。
@@ -130,9 +162,3 @@ mouseDown
 >"Over 200 classes were generated for component styled.div. Consider using the `attrs` method, together with a style object for frequently changed styles."
 - 這是因為只要每次傳入的 `props` 發生改變，`styled-components` 元件就需要產一個新的 class 來改變樣式。
 - 為了避免很頻繁的產生新的 class ，這邊我把需要透過 `props` 很頻繁更新的屬性從 `styled-components` 裡面抽出來，寫成 inline style 的樣式，藉此避免上述的問題。
-
-
-
-
-rxjs drag and drop with touch support
-https://gist.github.com/MoLow/5adec1333e11e03ebc6dbf08c2a6d30c
