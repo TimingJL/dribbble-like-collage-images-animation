@@ -5,7 +5,7 @@ Study how dribbble-404 make the beautiful 404 site and remake it.
 
 **成果：**[Demo](https://timingjl.github.io/dribbble-like-collage-images-animation/)
 
-![](https://raw.githubusercontent.com/TimingJL/dribbble-like-collage-images-animation/master/src/demo/dribbble-404-clone-demo.gif)
+![](https://raw.githubusercontent.com/TimingJL/dribbble-like-collage-images-animation/master/demo/dribbble-404-clone-demo.gif)
 
 
 # 做法解析
