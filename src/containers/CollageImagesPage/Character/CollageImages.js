@@ -27,13 +27,13 @@ const transformAnimation = () => {
   `;
 };
 
-const PuzzleWrapper = styled.div`
+const Wrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
 `;
 
-const PuzzleBox = styled.div`
+const ImageBox = styled.div`
   position: absolute;
   width: 18%;
   height: 6%;
@@ -59,40 +59,40 @@ const PuzzleBox = styled.div`
   animation : ${() => transformAnimation()} ${(props) => props.delay}s ease-in-out;
 `;
 
-const Puzzle = memo(({
+const CollageImages = memo(({
   positions,
-  charIndex,
+  elementIndex,
   isActive,
   color,
 }) => (
-  <PuzzleWrapper>
+  <Wrapper>
     {
         isActive &&
         positions.map((pos, index) => (
-          <PuzzleBox
+          <ImageBox
             key={index}
             pos={pos}
-            delay={(charIndex + 1) * 0.6 + 0.8}
+            delay={(elementIndex + 1) * 0.6 + 0.8}
             imageUrl={getRandomImage()}
             color={color}
           />
         ))
       }
-  </PuzzleWrapper>
+  </Wrapper>
 ));
 
-Puzzle.propTypes = {
+CollageImages.propTypes = {
   positions: PropTypes.array,
   isActive: PropTypes.bool,
-  charIndex: PropTypes.number,
+  elementIndex: PropTypes.number,
   color: PropTypes.string,
 };
 
-Puzzle.defaultProps = {
+CollageImages.defaultProps = {
   positions: [],
   isActive: false,
-  charIndex: 0,
+  elementIndex: 0,
   color: '',
 };
 
-export default Puzzle;
+export default CollageImages;

@@ -26,14 +26,12 @@ export const Message = styled.div`
   }
 `;
 
-export const StyledHeader = styled.div`
+export const CollageContainer = styled.div`
   position: relative;
-  /* width: 90vw; */
-  /* height: 80vh; */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${(props) => 90 / props.text.length}vw;
+  font-size: ${(props) => 90 / props.size}vw;
   transition: all 1s ease-in-out;
 `;
 

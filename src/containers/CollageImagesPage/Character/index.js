@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import Puzzle from './Puzzle';
-
+import CollageImages from './CollageImages';
 import { imagePositions } from './constants';
 
 const invisibleAnimation = keyframes`
@@ -15,7 +14,7 @@ const invisibleAnimation = keyframes`
   }
 `;
 
-const CharBoxWrapper = styled.div`
+const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -28,35 +27,35 @@ const CharBoxWrapper = styled.div`
   }
 `;
 
-const CharBox = memo(({
-  char,
-  charIndex,
+const Character = memo(({
+  element,
+  elementIndex,
   isActive,
   color,
 }) => (
-  <CharBoxWrapper>
-    <div className="char-box__char">{char}</div>
-    <Puzzle
-      positions={imagePositions[char]}
-      charIndex={charIndex}
+  <Wrapper>
+    <div className="char-box__char">{element}</div>
+    <CollageImages
+      positions={imagePositions[element]}
+      elementIndex={elementIndex}
       isActive={isActive}
       color={color}
     />
-  </CharBoxWrapper>
+  </Wrapper>
 ));
 
-CharBox.propTypes = {
-  char: PropTypes.string,
-  charIndex: PropTypes.number,
+Character.propTypes = {
+  element: PropTypes.string,
+  elementIndex: PropTypes.number,
   isActive: PropTypes.bool,
   color: PropTypes.string,
 };
 
-CharBox.defaultProps = {
-  char: '',
-  charIndex: 0,
+Character.defaultProps = {
+  element: '',
+  elementIndex: 0,
   isActive: false,
   color: '',
 };
 
-export default CharBox;
+export default Character;

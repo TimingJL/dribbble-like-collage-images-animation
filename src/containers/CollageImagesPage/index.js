@@ -1,19 +1,18 @@
 import React, { useState, memo, useCallback } from 'react';
 import ColorPickerSlider from 'components/ColorPickerSlider';
-import CharBox from './CharBox';
-
+import { COLOR_RED } from 'components/ColorPickerSlider/constants';
+import Character from './Character';
 import {
   Message,
-  StyledHeader,
+  CollageContainer,
   OperatorWrapper,
   RepeatAnimation,
 } from './Styled';
 
-const CollageImages = memo(() => {
-  // const text = '1234567890';
+const CollageImagesPage = memo(() => {
   const [isActive, setIsActive] = useState(true);
-  const [pickedColor, setPickedColor] = useState('#f00');
-  const text = '404';
+  const [pickedColor, setPickedColor] = useState(COLOR_RED);
+  const elements = '404';
   const indexKey = (index) => index;
 
   const handleGetPickedColor = useCallback((color) => {
@@ -30,19 +29,19 @@ const CollageImages = memo(() => {
         <h1 className="message__title">Wow, this page is awesome!</h1>
         <p className="message__content">While you’re here, feast your eyes upon these tantalizing popular designs matching the color.</p>
       </Message>
-      <StyledHeader text={text}>
+      <CollageContainer size={elements.length}>
         {
-          text.split('').map((char, index) => (
-            <CharBox
+          elements.split('').map((element, index) => (
+            <Character
               key={indexKey(index)}
-              char={char}
-              charIndex={index}
+              element={element}
+              elementIndex={index}
               isActive={isActive}
               color={pickedColor}
             />
           ))
         }
-      </StyledHeader>
+      </CollageContainer>
       <OperatorWrapper>
         <ColorPickerSlider handleGetColor={handleGetPickedColor} />
         <RepeatAnimation type="button" onClick={handleRepeatAnimation}>Repeat Animation</RepeatAnimation>
@@ -51,4 +50,4 @@ const CollageImages = memo(() => {
   );
 });
 
-export default CollageImages;
+export default CollageImagesPage;
