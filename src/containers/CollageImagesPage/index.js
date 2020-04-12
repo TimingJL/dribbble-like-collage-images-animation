@@ -4,7 +4,7 @@ import { COLOR_RED } from 'components/ColorPickerSlider/constants';
 import Character from './Character';
 import {
   Message,
-  CollageContainer,
+  CollagesContainer,
   OperatorWrapper,
   RepeatAnimation,
 } from './Styled';
@@ -29,7 +29,7 @@ const CollageImagesPage = memo(() => {
         <h1 className="message__title">Wow, this page is awesome!</h1>
         <p className="message__content">While you’re here, feast your eyes upon these tantalizing popular designs matching the color.</p>
       </Message>
-      <CollageContainer size={elements.length}>
+      <CollagesContainer size={elements.length}>
         {
           elements.split('').map((element, index) => (
             <Character
@@ -41,7 +41,7 @@ const CollageImagesPage = memo(() => {
             />
           ))
         }
-      </CollageContainer>
+      </CollagesContainer>
       <OperatorWrapper>
         <ColorPickerSlider handleGetColor={handleGetPickedColor} />
         <RepeatAnimation type="button" onClick={handleRepeatAnimation}>Repeat Animation</RepeatAnimation>

@@ -26,7 +26,7 @@ export const Message = styled.div`
   }
 `;
 
-export const CollageContainer = styled.div`
+export const CollagesContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
